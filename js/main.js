@@ -206,6 +206,7 @@ const networksContracts = {
 }
 
 async function loginWithMetamask() {
+    var MMSDK = new MetaMaskSDK.MetaMaskSDK();
     const ethereum = MMSDK.getProvider() // You can also access via window.ethereum
     try {
         var accounts = await ethereum.request({method: 'eth_requestAccounts'});
