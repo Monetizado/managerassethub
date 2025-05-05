@@ -460,7 +460,7 @@ async function createContent() {
         contentAmount = web3.utils.toWei(contentAmount,"ether");
         const query = contractPublic.methods.add(contentName, contentAmount);
         const encodedABI = query.encodeABI();
-        const gasPrice = web3.utils.toHex(await web3.eth.getGasPrice());
+        //const gasPrice = web3.utils.toHex(await web3.eth.getGasPrice());
 
         const paramsForEIP1559 = { from: account, 
             to: contractNetwork,
