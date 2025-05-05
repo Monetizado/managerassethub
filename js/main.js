@@ -383,8 +383,6 @@ async function collectMoney(sequenceId){
 
     const networkName = networkSelected.split(':')[0];
 
-    const isEIP1559 = networksEIP1559.includes(networkName);
-
     if(contractPublic != undefined) {
         var amountToCollect = 0;
         var contentInfo = await ethereum
