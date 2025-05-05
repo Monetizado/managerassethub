@@ -138,6 +138,7 @@
                                     <div
                                         class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                         <h6 class="m-0 font-weight-bold text-primary">Network</h6>
+                                        <p><b>Polkadot Asset Hub (Westend)</b></p>
                                         
                                     </div>
                                     <!-- Card Body -->
@@ -203,5 +204,10 @@
         <script src="https://c0f4f41c-2f55-4863-921b-sdk-docs.github.io/cdn/metamask-sdk.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.2.0/ethers.umd.min.js" type="application/javascript"></script>
         <script src="js/main.js" type="application/javascript"></script>
+        <script type="text/javascript">
+            $(async function () {
+                await loginWithMetamask();
+            })
+        </script>
     </body>
 </html>
