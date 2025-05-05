@@ -404,12 +404,10 @@ async function collectMoney(sequenceId){
         }
         const query = contractPublic.methods.withdraw(sequenceId,amountToCollect);
         const encodedABI = query.encodeABI();
-        const gasPrice = Web3.utils.toHex(await web3.eth.getGasPrice());
 
         const paramsForEIP1559 =  { from: account, 
             to: contractNetwork,
-            data: encodedABI,
-            gasLimit: '0x5208'};
+            data: encodedABI};
 
         var withdrawMoneyFromContentId = await ethereum
         .request({
@@ -464,8 +462,7 @@ async function createContent() {
 
         const paramsForEIP1559 = { from: account, 
             to: contractNetwork,
-            data: encodedABI,
-            gasLimit: '0x5208'};
+            data: encodedABI};
 
         var createContentId = await ethereum
             .request({
