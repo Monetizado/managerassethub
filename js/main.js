@@ -211,7 +211,6 @@ async function loginWithMetamask() {
     const ethereum = MMSDK.getProvider() // You can also access via window.ethereum
     try {
         var accounts = await ethereum.request({method: 'eth_requestAccounts'});
-        account = accounts[0];
         await changeNetwork();
 
     } catch {
@@ -331,13 +330,13 @@ async function getContentList(){
                 contractTickerTd.innerHTML = '<b>' + valor.name + '</b>';
                 tbodyTr.appendChild(contractTickerTd);
                 var balanceTd = document.createElement('td');
-                balanceTd.innerHTML = '<b>' + Web3.utils.fromWei(valor.accessCost,"ether") + '</b>';
+                balanceTd.innerHTML = '<b>' + Web3.utils.fromWei(valor.cost,"ether") + '</b>';
                 tbodyTr.appendChild(balanceTd);
                 var balanceUSDTd2 = document.createElement('td');
                 balanceUSDTd2.innerHTML = '<b>' + Web3.utils.fromWei(valor.amountAvailable,"ether") + '</b>';
                 tbodyTr.appendChild(balanceUSDTd2);
                 var balanceUSDTd3 = document.createElement('td');
-                balanceUSDTd3.innerHTML = '<b>' + Web3.utils.fromWei(valor.amountCollected,"ether") + '</b>';
+                balanceUSDTd3.innerHTML = '<b>' + Web3.utils.fromWei(valor.totalAmount,"ether") + '</b>';
                 tbodyTr.appendChild(balanceUSDTd3);
                 var balanceUSDTdOption2 = document.createElement('td');
                 balanceUSDTdOption2.innerHTML = '<input type="button" id="copyMonetizadoTagButton" onclick="getMonetizadoTag('+valor.sequenceId+')" value="Copy Monetizado tag to clipboard" class="btn btn-secondary btn-block" />';
